@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alp Berke Ardic</title>
-<meta name="description" content="Alp Berke Ardic is a Ph.D. candidate in Electrical and Computer Engineering at the University of Illinois Chicago, working on distributed and decentralized machine learning at the edge.">
+<title>Alp Berke Ard&#305;&ccedil;</title>
+<meta name="description" content="Alp Berke Ard&#305;&ccedil; is a Ph.D. candidate in Electrical and Computer Engineering at the University of Illinois Chicago, working on distributed and decentralized machine learning at the edge.">
 <meta name="color-scheme" content="dark">
-<meta property="og:title" content="Alp Berke Ardic">
+<meta property="og:title" content="Alp Berke Ard&#305;&ccedil;">
 <meta property="og:description" content="Ph.D. candidate in ECE at the University of Illinois Chicago. Distributed and decentralized machine learning at the edge.">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://alpbardic.github.io/profile.jpg">
 <meta property="og:url" content="https://alpbardic.github.io/">
+<meta name="theme-color" content="#0B0E13">
 <meta name="twitter:card" content="summary">
-<meta property="og:image:alt" content="Portrait of Alp Berke Ardic">
+<meta property="og:image:alt" content="Portrait of Alp Berke Ard&#305;&ccedil;">
 <link rel="canonical" href="https://alpbardic.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%230B0E13'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Georgia,serif'%20font-size='17'%20fill='%237FB2F0'%20text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +38,10 @@
 
   * { box-sizing: border-box; }
   html {
+    color-scheme: dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(127, 178, 240, 0.15);
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
   }
@@ -48,8 +51,8 @@
     background: var(--bg);
     color: var(--body);
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-size: 16.5px;
-    line-height: 1.68;
+    font-size: 1rem;
+    line-height: 1.65;
   }
   body::before {
     content: "";
@@ -62,11 +65,33 @@
     z-index: 0;
     background: radial-gradient(760px 420px at 74% 8%, rgba(127, 178, 240, 0.16), transparent 70%);
   }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 26px; position: relative; z-index: 1; }
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding-left: max(26px, env(safe-area-inset-left));
+    padding-right: max(26px, env(safe-area-inset-right));
+    position: relative;
+    z-index: 1;
+  }
 
-  a { color: var(--accent); }
+  a { color: var(--accent); touch-action: manipulation; }
   ::selection { background: rgba(127, 178, 240, 0.28); color: #fff; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 30;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  .skip:focus { left: 12px; top: 12px; }
 
   /* ---------- Sticky nav ---------- */
   .topbar {
@@ -82,20 +107,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
+    gap: 20px;
     height: 54px;
   }
   .topbar .mark {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.78rem;
+    font-size: 0.8125rem;
     letter-spacing: 0.08em;
     color: var(--ink);
     text-decoration: none;
     white-space: nowrap;
   }
-  .topbar nav { display: flex; gap: 22px; }
+  .topbar nav { display: flex; gap: 24px; }
   .topbar nav a {
-    font-size: 0.83rem;
+    font-size: 0.875rem;
     color: var(--muted);
     text-decoration: none;
     transition: color .18s ease;
@@ -103,15 +128,15 @@
   .topbar nav a:hover { color: var(--ink); }
 
   /* ---------- Hero ---------- */
-  .hero .wrap { padding-top: 72px; padding-bottom: 58px; }
+  .hero .wrap { padding-top: 72px; padding-bottom: 56px; }
   .hero-grid {
     display: flex;
     align-items: flex-start;
-    gap: 46px;
+    gap: 48px;
   }
   .intro { flex: 1 1 auto; min-width: 0; }
 
-  .portrait { flex: 0 0 auto; position: relative; margin: 14px 0 0; }
+  .portrait { flex: 0 0 auto; position: relative; margin: 16px 0 0; }
   .portrait img {
     display: block;
     width: 220px;
@@ -128,15 +153,16 @@
     font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
     font-size: clamp(2.7rem, 7.4vw, 4.1rem);
-    line-height: 1.02;
+    line-height: 1.05;
     letter-spacing: -0.008em;
+    text-wrap: balance;
     color: var(--ink);
     margin: 0;
   }
   .role {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--body);
-    margin: 14px 0 0;
+    margin: 16px 0 0;
   }
   .role strong { color: var(--ink); font-weight: 600; }
   .role-org { color: var(--muted); }
@@ -151,7 +177,7 @@
   }
 
   /* ---------- Icon link row ---------- */
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
   .links a {
     display: inline-flex;
     align-items: center;
@@ -178,33 +204,28 @@
 
   .mailline {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.82rem;
+    font-size: 0.8125rem;
     color: var(--muted);
-    margin: 18px 0 0;
+    margin: 20px 0 0;
   }
   .mailline a { color: var(--body); text-decoration: none; border-bottom: 1px solid var(--line); }
   .mailline a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* ---------- Sections ---------- */
   section { border-top: 1px solid var(--line); }
-  section .wrap { padding: 52px 26px; }
+  section .wrap { padding-top: 52px; padding-bottom: 52px; }
 
   .section-label {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.73rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0 0 26px;
+    margin: 0 0 24px;
   }
-  .section-label .dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
-  .dot.a, .dot.b, .dot.c, .dot.d, .dot.e { background: var(--accent); }
 
-  .prose p { margin: 0 0 1.1rem; max-width: 64ch; text-wrap: pretty; }
+  .prose p { margin: 0 0 1rem; max-width: 64ch; text-wrap: pretty; }
   .prose p:last-child { margin-bottom: 0; }
   .prose a { text-decoration: none; border-bottom: 1px solid rgba(127, 178, 240, 0.32); transition: border-color .18s ease; }
   .prose a:hover { border-bottom-color: var(--accent); }
@@ -212,19 +233,19 @@
 
   /* Research interests + tools */
   .sub {
-    font-size: 0.84rem;
+    font-size: 0.875rem;
     font-weight: 400;
     color: var(--muted);
-    margin: 0 0 13px;
+    margin: 0 0 12px;
   }
-  .tags + .sub { margin-top: 30px; }
-  .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 9px; }
+  .tags + .sub { margin-top: 32px; }
+  .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .tags li {
-    font-size: 0.86rem;
+    font-size: 0.875rem;
     color: var(--body);
     background: var(--surface);
     border: 1px solid var(--line);
-    padding: 7px 14px;
+    padding: 8px 14px;
     border-radius: 9px;
   }
   .tags.tools li { background: transparent; color: var(--muted); }
@@ -235,36 +256,38 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 22px;
+    gap: 24px;
     padding: 20px 0;
     border-top: 1px solid var(--line);
   }
+  .rows li > div { min-width: 0; }
   .rows li:first-child { border-top: none; padding-top: 0; }
   .rows li:last-child { padding-bottom: 0; }
   .row-title { color: var(--ink); font-weight: 600; font-size: 1rem; line-height: 1.4; }
-  .row-where { color: var(--body); font-size: 0.9rem; margin-top: 3px; }
-  .row-note { color: var(--muted); font-size: 0.89rem; margin-top: 7px; max-width: 56ch; }
+  .row-where { color: var(--body); font-size: 0.875rem; margin-top: 4px; }
+  .row-note { color: var(--muted); font-size: 0.875rem; margin-top: 8px; max-width: 56ch; }
   .row-when {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.76rem;
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
     color: var(--muted);
     white-space: nowrap;
     flex: 0 0 auto;
   }
 
   /* Publications */
-  .pubs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 30px; }
-  .pub-title { font-weight: 600; color: var(--ink); font-size: 1.02rem; line-height: 1.45; text-decoration: none; display: inline-block; }
+  .pubs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 32px; }
+  .pub-title { font-weight: 600; color: var(--ink); font-size: 1rem; line-height: 1.4; text-decoration: none; display: inline-block; text-wrap: pretty; }
   a.pub-title { border-bottom: 1px solid transparent; transition: color .18s ease, border-color .18s ease; }
   a.pub-title:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  .pub-authors { font-size: 0.9rem; color: var(--muted); margin-top: 7px; }
+  .pub-authors { font-size: 0.875rem; color: var(--muted); margin-top: 8px; }
   .pub-authors .me { color: var(--ink); font-weight: 600; }
   .pub-meta {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.77rem;
-    line-height: 1.75;
+    font-size: 0.8125rem;
+    line-height: 1.65;
     color: var(--muted);
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .pub-meta .tag { margin-right: 11px; }
   .pub-meta .pub-link { margin-left: 11px; }
@@ -272,7 +295,7 @@
     display: inline-block;
     vertical-align: 1px;
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     padding: 4px 9px;
@@ -281,22 +304,22 @@
   }
   .tag.published { background: rgba(63, 191, 175, 0.12); color: #5FD3C4; border-color: rgba(63, 191, 175, 0.28); }
   .tag.review    { background: rgba(224, 166, 60, 0.12); color: #E0A63C; border-color: rgba(224, 166, 60, 0.28); }
-  .tag.submitted { background: rgba(154, 163, 179, 0.10); color: #A8B0BE; border-color: rgba(154, 163, 179, 0.26); }
   .pub-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; white-space: nowrap; }
   .pub-link:hover { border-bottom-color: var(--accent); }
 
   /* Footer */
   footer { border-top: 1px solid var(--line); }
   footer .wrap {
-    padding: 52px 26px 56px;
+    padding-top: 56px;
+    padding-bottom: 56px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 14px;
     align-items: center;
   }
-  .foot-name { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.76rem; color: var(--muted); }
-  .foot-links a { color: var(--muted); font-size: 0.79rem; text-decoration: none; margin-left: 20px; }
+  .foot-name { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.8125rem; color: var(--muted); }
+  .foot-links a { color: var(--muted); font-size: 0.8125rem; text-decoration: none; margin-left: 20px; }
   .foot-links a:first-child { margin-left: 0; }
   .foot-links a:hover { color: var(--accent); }
 
@@ -326,29 +349,31 @@
       width: 100%;
       gap: 20px;
       overflow-x: auto;
+      overscroll-behavior-x: contain;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
     .topbar nav::-webkit-scrollbar { display: none; }
     .topbar nav a { white-space: nowrap; }
-    body { font-size: 16px; }
-    .wrap { padding: 0 20px; }
+    .wrap { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
     .hero .wrap { padding-top: 44px; padding-bottom: 44px; }
     .hero-grid { flex-direction: column-reverse; align-items: flex-start; gap: 28px; }
     .portrait { margin: 0; }
     .portrait img { width: 132px; height: 132px; }
-    section .wrap { padding: 42px 20px; }
+    section .wrap { padding-top: 40px; padding-bottom: 40px; }
     .rows li { flex-direction: column-reverse; align-items: flex-start; gap: 6px; }
-    .tags li { font-size: 0.8rem; padding: 6px 11px; }
+    .tags li { font-size: 0.8125rem; padding: 6px 12px; }
     .lede { max-width: none; }
   }
 </style>
 </head>
 <body>
 
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="topbar">
     <div class="wrap">
-      <a class="mark" href="#top">ALP BERKE ARDIC</a>
+      <a class="mark" href="#top">ALP BERKE ARDI&Ccedil;</a>
       <nav aria-label="Sections">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
@@ -364,9 +389,9 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="intro">
-          <h1 class="name">Alp Berke Ardic</h1>
+          <h1 class="name">Alp Berke Ard&#305;&ccedil;</h1>
           <p class="role"><strong>Ph.D. Candidate</strong>, Electrical &amp; Computer Engineering<br><span class="role-org">University of Illinois Chicago</span></p>
-          <p class="lede">I build machine learning systems that run across networks of small devices, with no central server in the middle.</p>
+          <p class="lede">I build machine learning systems that run across networks of small devices, with no central server.</p>
 
           <nav class="links" aria-label="Contact and profiles">
             <a href="mailto:aardic2@uic.edu" title="Email" aria-label="Email">
@@ -390,21 +415,21 @@
         </div>
 
         <figure class="portrait">
-          <img src="profile.jpg" width="220" height="220" alt="Portrait of Alp Berke Ardic" decoding="async" fetchpriority="high">
+          <img src="profile.jpg" width="220" height="220" alt="Portrait of Alp Berke Ard&#305;&ccedil;" decoding="async" fetchpriority="high">
         </figure>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section id="about" aria-labelledby="about-label">
       <div class="wrap">
-        <h2 class="section-label" id="about-label"><span class="dot a"></span> About</h2>
+        <h2 class="section-label" id="about-label">About</h2>
         <div class="prose">
           <p>I am a Ph.D. candidate in Electrical and Computer Engineering at the <a href="https://ece.uic.edu" target="_blank" rel="noopener">University of Illinois Chicago</a>, advised by Prof. Erdem Koyuncu. I work on distributed and decentralized machine learning.</p>
-          <p>One question drives most of my work: how do you train and run a model on many small devices, when each device has limited compute, memory, and bandwidth, and there is no central server to coordinate them?</p>
-          <p>So far I have two main results. <strong>Random Walking Snakes</strong> is a decentralized training method that converges faster than Random Walk Learning. <strong>Model-distributed inference</strong> splits one model across many devices and uses graph coloring to schedule them without conflicts, which lowers communication latency.</p>
-          <p>Right now I am working on wildfire hotspot detection and distributed world models. I also teach as a graduate assistant for machine learning, deep learning, and pattern recognition.</p>
+          <p>How do you train and run a model on many small devices, when each one has limited compute, memory, and bandwidth, and no device is in charge?</p>
+          <p>Random Walking Snakes, my decentralized training method, converges faster than Random Walk Learning. Decentralized model-distributed inference splits one model across many devices and uses graph coloring to keep their transfers from colliding, which lowers communication latency.</p>
+          <p>Right now I am working on gossip algorithms for machine learning, wildfire hotspot detection, and distributed world models. I also teach as a graduate assistant for machine learning, deep learning, and pattern recognition.</p>
           <p>If you work on similar problems, <a href="mailto:aardic2@uic.edu">write to me</a>. I am glad to talk.</p>
         </div>
       </div>
@@ -412,7 +437,7 @@
 
     <section id="publications" aria-labelledby="publications-label">
       <div class="wrap">
-        <h2 class="section-label" id="publications-label"><span class="dot e"></span> Publications</h2>
+        <h2 class="section-label" id="publications-label">Publications</h2>
         <ul class="pubs">
           <li>
             <span class="pub-title">When Does Spatial Cooperation Help? Contamination Regimes in Decentralized Online Spectrum Anomaly Learning</span>
@@ -422,7 +447,7 @@
           <li>
             <span class="pub-title">Cost-Aware Asynchronous Persistent Graph Coloring for Decentralized Model-Distributed Inference</span>
             <div class="pub-authors"><span class="me">A. B. Ardic</span>, M. Dwyer, E. Koyuncu</div>
-            <div class="pub-meta"><span class="tag submitted">Submitted</span> <span class="venue">IEEE Trans. Parallel &amp; Distributed Systems</span></div>
+            <div class="pub-meta"><span class="tag review">Under review</span> <span class="venue">IEEE Trans. Parallel &amp; Distributed Systems</span></div>
           </li>
           <li>
             <span class="pub-title">Random Walking Snakes for Decentralized Learning of Heterogeneous Data at Edge Networks</span>
@@ -445,10 +470,11 @@
 
     <section id="research" aria-labelledby="research-label">
       <div class="wrap">
-        <h2 class="section-label" id="research-label"><span class="dot b"></span> Research &amp; Tools</h2>
+        <h2 class="section-label" id="research-label">Research &amp; Tools</h2>
         <h3 class="sub">What I work on</h3>
         <ul class="tags">
           <li>Decentralized &amp; distributed ML</li>
+          <li>Gossip algorithms</li>
           <li>Federated learning</li>
           <li>Communication-efficient deep learning</li>
           <li>Model-distributed inference</li>
@@ -474,7 +500,7 @@
 
     <section id="education" aria-labelledby="education-label">
       <div class="wrap">
-        <h2 class="section-label" id="education-label"><span class="dot a"></span> Education</h2>
+        <h2 class="section-label" id="education-label">Education</h2>
         <ul class="rows">
           <li>
             <div>
@@ -505,13 +531,13 @@
 
     <section id="experience" aria-labelledby="experience-label">
       <div class="wrap">
-        <h2 class="section-label" id="experience-label"><span class="dot c"></span> Experience &amp; Internships</h2>
+        <h2 class="section-label" id="experience-label">Experience &amp; Internships</h2>
         <ul class="rows">
           <li>
             <div>
               <div class="row-title">Graduate Research Assistant</div>
               <div class="row-where">University of Illinois Chicago &middot; Chicago, IL</div>
-              <div class="row-note">Decentralized training and model-distributed inference for edge networks, validated on 5G edge testbeds. Teaching assistant for machine learning, deep learning, and pattern recognition, with more than 100 students mentored.</div>
+              <div class="row-note">Work on decentralized training and model-distributed inference, tested on 5G edge testbeds. Teach machine learning, deep learning, and pattern recognition, and have mentored more than 100 students.</div>
             </div>
             <div class="row-when">Sep 2022 &ndash; present</div>
           </li>
@@ -519,7 +545,7 @@
             <div>
               <div class="row-title">Research Intern</div>
               <div class="row-where">T&Uuml;B&#304;TAK SAGE &middot; Ankara, Turkey</div>
-              <div class="row-note">Real-time object detection for fast-moving targets under motion blur, plus a faster preprocessing pipeline for model inference.</div>
+              <div class="row-note">Built real-time object detection for fast-moving targets under motion blur, and made the preprocessing pipeline for model inference faster.</div>
             </div>
             <div class="row-when">Sep 2021 &ndash; May 2022</div>
           </li>
@@ -527,7 +553,7 @@
             <div>
               <div class="row-title">Embedded &amp; Camera Systems Intern</div>
               <div class="row-where">ASELSAN &middot; Ankara, Turkey</div>
-              <div class="row-note">Built an embedded camera system in C on a microcontroller, from image capture through processing to display, with on-board memory management.</div>
+              <div class="row-note">Built an embedded camera system in C on a microcontroller. It handled image capture, processing, display, and on-board memory.</div>
             </div>
             <div class="row-when">Jun 2021 &ndash; Aug 2021</div>
           </li>
@@ -535,7 +561,7 @@
             <div>
               <div class="row-title">Robotics Researcher</div>
               <div class="row-where">Bilkent Miniature Robotics Lab &middot; Ankara, Turkey</div>
-              <div class="row-note">Low-cost UAV systems for infrastructure inspection. Listed in the acknowledgements of the <a href="https://ieeexplore.ieee.org/document/10121952" target="_blank" rel="noopener">SCoReR</a> collision-resilient drone project.</div>
+              <div class="row-note">Built low-cost UAV systems for infrastructure inspection. Listed in the acknowledgements of the <a href="https://ieeexplore.ieee.org/document/10121952" target="_blank" rel="noopener">SCoReR</a> collision-resilient drone project.</div>
             </div>
             <div class="row-when">Jan 2021 &ndash; Nov 2021</div>
           </li>
@@ -543,7 +569,7 @@
             <div>
               <div class="row-title">AI &amp; Computer Vision Intern</div>
               <div class="row-where">TWIN Science &amp; Robotics &middot; Istanbul, Turkey</div>
-              <div class="row-note">Object-tracking vision pipelines on Raspberry Pi and Arduino for science kits, part of a project bringing hands-on science to children in rural areas.</div>
+              <div class="row-note">Built object-tracking vision pipelines on Raspberry Pi and Arduino for science kits. The kits were part of a project that brought hands-on science to children in rural areas.</div>
             </div>
             <div class="row-when">Jul 2019 &ndash; Sep 2019</div>
           </li>
@@ -553,14 +579,39 @@
 
     <section id="projects" aria-labelledby="projects-label">
       <div class="wrap">
-        <h2 class="section-label" id="projects-label"><span class="dot d"></span> Projects</h2>
+        <h2 class="section-label" id="projects-label">Selected Projects</h2>
         <ul class="rows">
           <li>
             <div>
-              <div class="row-title">On-device CNN compression on an ESP32</div>
-              <div class="row-where">Microcontroller with 312 KB of DRAM</div>
-              <div class="row-note">Fit a CNN onto the chip using structured pruning, adaptive pooling, and 8-bit quantization, so inference runs on the device itself.</div>
+              <div class="row-title">CNN compression for an ESP32</div>
+              <div class="row-where">ECE 594 team project &middot; ESP32-WROOM with 312&nbsp;KB of DRAM</div>
+              <div class="row-note">Fit a CNN onto the chip with structured pruning, adaptive pooling, and 8-bit quantization, so inference runs on the device itself. Chose the model and the compression methods, trained it, and exported the weights the team deployed.</div>
             </div>
+            <div class="row-when">Oct 2025 &ndash; Dec 2025</div>
+          </li>
+          <li>
+            <div>
+              <div class="row-title">Reinforcement learning MAC protocol in ns-3</div>
+              <div class="row-where">ECE 533 Advanced Network Communications &middot; University of Illinois Chicago</div>
+              <div class="row-note">Built a Q-learning agent that picks each node's transmission slot from its own queue length and timing feedback. Connected it to an ns-3 simulation with ns3-gym, where it beat both the random-slot and fixed-slot baselines.</div>
+            </div>
+            <div class="row-when">Oct 2025 &ndash; Dec 2025</div>
+          </li>
+          <li>
+            <div>
+              <div class="row-title">Reducing the power consumption of refrigerators</div>
+              <div class="row-where">Senior industrial design project &middot; Bilkent University &amp; Ar&ccedil;elik</div>
+              <div class="row-note">Built a reinforcement learning model with the software team to lower power use. Worked with the sensor design team on the ice sensor.</div>
+            </div>
+            <div class="row-when">Sep 2021 &ndash; May 2022</div>
+          </li>
+          <li>
+            <div>
+              <div class="row-title">Image captioning with CNNs and RNNs</div>
+              <div class="row-where">EEE443 Neural Networks &middot; Bilkent University</div>
+              <div class="row-note">Combined CNNs and RNNs to generate captions for test images, then tuned the networks and measured how accurate the captions were.</div>
+            </div>
+            <div class="row-when">Oct 2021 &ndash; Dec 2021</div>
           </li>
         </ul>
       </div>
@@ -569,7 +620,7 @@
 
   <footer>
     <div class="wrap">
-      <span class="foot-name">Alp Berke Ardic &middot; Chicago, IL</span>
+      <span class="foot-name">Alp Berke Ard&#305;&ccedil; &middot; Chicago, IL</span>
       <span class="foot-links">
         <a href="mailto:aardic2@uic.edu">Email</a>
         <a href="https://github.com/alpbardic" target="_blank" rel="noopener">GitHub</a>
