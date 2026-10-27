@@ -426,10 +426,10 @@
       <div class="wrap">
         <h2 class="section-label" id="about-label">About</h2>
         <div class="prose">
-          <p>I am a Ph.D. candidate in Electrical and Computer Engineering at the <a href="https://ece.uic.edu" target="_blank" rel="noopener">University of Illinois Chicago</a>, advised by Prof. Erdem Koyuncu. I work on distributed and decentralized machine learning.</p>
-          <p>How do you train and run a model on many small devices, when each one has limited compute, memory, and bandwidth, and no device is in charge?</p>
-          <p>Random Walking Snakes, my decentralized training method, converges faster than Random Walk Learning. Decentralized model-distributed inference splits one model across many devices and uses graph coloring to keep their transfers from colliding, which lowers communication latency.</p>
-          <p>Right now I am working on gossip algorithms for machine learning, wildfire hotspot detection, and distributed world models. I also teach as a graduate assistant for machine learning, deep learning, and pattern recognition.</p>
+          <p>I am a Ph.D. candidate in Electrical and Computer Engineering at the <a href="https://ece.uic.edu" target="_blank" rel="noopener">University of Illinois Chicago</a>, advised by Prof. Erdem Koyuncu. I work on decentralized and federated learning, and on fine-tuning large language models across many devices.</p>
+          <p>How do you train one model across many devices when each holds different data, no device is in charge, and some take part far less often than others?</p>
+          <p>When participation is uneven, the model drifts toward the data of the devices it hears from most. My current work studies how this bias arises in gossip-based LLM fine-tuning and how to correct it using only local information. I am also working on distributed world models, and I teach as a graduate assistant for machine learning, deep learning, and pattern recognition.</p>
+          <p>Earlier, I built Random Walking Snakes, a decentralized training method that converges faster than Random Walk Learning, and extended it to heterogeneous data. Decentralized model-distributed inference splits one model across many devices and uses graph coloring to keep their transfers from colliding, which lowers communication latency.</p>
           <p>If you work on similar problems, <a href="mailto:aardic2@uic.edu">write to me</a>. I am glad to talk.</p>
         </div>
       </div>
@@ -458,16 +458,6 @@
             <a class="pub-title" href="https://ieeexplore.ieee.org/document/10189426" target="_blank" rel="noopener">Random Walking Snakes for Decentralized Learning at Edge Networks</a>
             <div class="pub-authors"><span class="me">A. B. Ardic</span>, H. Seferoglu, S. El Rouayheb, E. Koyuncu</div>
             <div class="pub-meta"><span class="tag published">Published</span> <span class="venue">IEEE LANMAN 2023 &middot; London, UK</span> <a class="pub-link" href="https://ieeexplore.ieee.org/document/10189426" target="_blank" rel="noopener">IEEE Xplore &rarr;</a></div>
-          </li>
-          <li>
-            <span class="pub-title">RUMOR Has It: Correcting Participation Bias in Decentralized Language Model Fine-Tuning</span>
-            <div class="pub-authors"><span class="me">A. B. Ardic</span>, E. Koyuncu</div>
-            <div class="pub-meta"><span class="tag review">Under review</span> <span class="venue">ICLR 2027 &middot; Extended version of the NeurIPS 2026 CODEC-FM workshop paper</span></div>
-          </li>
-          <li>
-            <span class="pub-title">HotSight: A Paired RGB&ndash;Thermal UAV Dataset and Benchmark for Wildfire Combustion-State Segmentation and Hotspot Localization</span>
-            <div class="pub-authors">R. Dowlatshahi, E. G. Galvan, D. Metri, B. Nagar, S. Ozcan, <span class="me">A. B. Ardic</span>, F. Jafarian Dehkordi, M. B. Dulkadiroglu, A. Feizbakhsh, P. Gholami, E. Hamdan, T. Li, E. Meco, B. Oral, H. Seferoglu, A. E. Cetin, A. C. Watts, E. Koyuncu</div>
-            <div class="pub-meta"><span class="tag review">Under review</span> <span class="venue">IEEE/CVF WACV 2027</span></div>
           </li>
           <li>
             <span class="pub-title">Cost-Aware Asynchronous Persistent Graph Coloring for Decentralized Model-Distributed Inference</span>
