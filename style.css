@@ -224,14 +224,8 @@ section .wrap { padding-top: 52px; padding-bottom: 52px; }
 .prose a:hover { border-bottom-color: var(--accent); }
 .prose strong { color: var(--ink); font-weight: 600; }
 
-/* Research interests + tools */
-.sub {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-.tags + .sub { margin-top: 32px; }
+/* Areas of interest + tools */
+.tags + .section-label { margin-top: 44px; }
 .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li {
   font-size: 0.875rem;
