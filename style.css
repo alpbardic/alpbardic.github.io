@@ -207,7 +207,7 @@ section .wrap { padding-top: 52px; padding-bottom: 52px; }
   margin: 0 0 24px;
 }
 
-/* A page of its own: Publications, Research, Education, Experience, Projects */
+/* A page of its own: Publications, Education, Experience, Projects */
 .page .wrap { padding-top: 64px; padding-bottom: 72px; }
 .page-title {
   font-family: 'Instrument Serif', Georgia, serif;
