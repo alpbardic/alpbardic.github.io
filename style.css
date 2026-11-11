@@ -275,6 +275,7 @@ a.pub-title:hover { color: var(--accent); border-bottom-color: var(--accent); }
   line-height: 1.65;
   color: var(--muted);
   margin-top: 8px;
+  text-wrap: pretty;
 }
 .pub-meta .tag { margin-right: 11px; }
 .pub-meta .pub-link { margin-left: 11px; }
@@ -291,6 +292,7 @@ a.pub-title:hover { color: var(--accent); border-bottom-color: var(--accent); }
 }
 .tag.published, .tag.accepted { background: rgba(63, 191, 175, 0.12); color: #5FD3C4; border-color: rgba(63, 191, 175, 0.28); }
 .tag.review    { background: rgba(224, 166, 60, 0.12); color: #E0A63C; border-color: rgba(224, 166, 60, 0.28); }
+.tag.submitted { background: rgba(154, 163, 179, 0.10); color: #A8B0BE; border-color: rgba(154, 163, 179, 0.26); }
 .pub-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; white-space: nowrap; }
 .pub-link:hover { border-bottom-color: var(--accent); }
 
