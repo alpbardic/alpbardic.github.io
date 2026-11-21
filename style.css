@@ -31,7 +31,7 @@ body {
   min-height: 100dvh;
   background: var(--bg);
   color: var(--body);
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.65;
 }
